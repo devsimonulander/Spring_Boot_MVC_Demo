@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC Demo</title>
+</head>
+<body>
+<center><h1>MVC Calculator Demo</h1></center>
+<center>
+    <!-- The form that handles the frontend of the MVC demo -->
+    <form th:action="@{/}" th:object="${Job}" method="post">
+        <input type="text" id="FirstTerm" name="FirstTerm" th:value="${Job.FirstTerm}">
+        <select id="Operator" name="Operator" th:field="${Job.Operator}">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="SecondTern" name="SecondTerm" th:value="${Job.SecondTerm}"><br><br>
+        <input type="submit" name="Submit" value="Submit"><br>
+        <label for="Output">Result:</label><br>
+        <input type="text" id="Output" name="Output" th:value="${Job.Output}"><br><br>
+    </form>
+</center>
+</body>
+</html>
